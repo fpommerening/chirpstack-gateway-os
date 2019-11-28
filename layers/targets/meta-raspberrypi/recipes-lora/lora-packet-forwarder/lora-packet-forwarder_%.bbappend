@@ -26,6 +26,7 @@ SRC_URI_append = "file://lora-packet-forwarder.default \
                   file://rak831/global_conf.au915_6.json \
                   file://rak831/global_conf.au915_7.json \
                   file://rak831/global_conf.eu868.json \
+				  file://rak831/global_conf.eu433.json \
                   file://rak831/global_conf.us915_0.json \
                   file://rak831/global_conf.us915_1.json \
                   file://rak831/global_conf.us915_2.json \
