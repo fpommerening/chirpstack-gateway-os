@@ -65,18 +65,20 @@ do_setup_ic980a() {
 
 do_setup_rak831() {
     FUN=$(dialog --title "Channel-plan configuration" --menu "Select the channel-plan:" 15 60 3 \
-        1 "EU868" \
-        2 "AU915" \
-        3 "US915" \
+        1 "EU433" \
+        2 "EU868" \
+        3 "AU915" \
+        4 "US915" \
         3>&1 1>&2 2>&3)
     RET=$?
     if [ $RET -eq 1 ]; then
         do_main_menu
     elif [ $RET -eq 0 ]; then
         case "$FUN" in
-            1) do_copy_global_conf "rak831" "eu868" && do_copy_chirpstack_config "eu868";;
-            2) do_select_au915_block "rak831";;
-            3) do_select_us915_block "rak831";;
+            1) do_copy_global_conf "rak831" "eu433" && do_copy_chirpstack_config "eu433";;
+            2) do_copy_global_conf "rak831" "eu868" && do_copy_chirpstack_config "eu868";;
+            3) do_select_au915_block "rak831";;
+            4) do_select_us915_block "rak831";;
         esac
     fi
 }
